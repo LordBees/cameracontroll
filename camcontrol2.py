@@ -48,7 +48,8 @@ class camera:
         response = urllib.request.urlopen(req)
         the_page = response.read()
         
-    def send2cam2(self):
+    def send2cam2(self,datarr):
+        self.dataval = datarr
         #url = self.getcamstr()
         #theurl = 'http://www.someserver.com/toplevelurl/somepage.htm'
         #username = 'johnny'
@@ -93,7 +94,12 @@ class camera:
         
     def get_camip(self):
         return self.cam_reqhead
+    
+    def set_dataval(self,array):
+        self.dataval = array
         
+    def get_dataval(self):
+        return self.dataval
 c=camera()        
 def ct():
     c.s2tst()
